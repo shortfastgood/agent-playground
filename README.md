@@ -28,3 +28,5 @@ That said, the implementation uses the latest version of Python and aims to be o
 ## Data Models
 
 For a search or scan across different levels in the filesystem that leads to correct code analysis, a reflective model potentially large enough to function only with significant memory is required. Conversely, the results of these analyses can be divided into small steps to be executed in parallel. In the first case, we refer to Large Language Models (LLM), in the second case, Small Language Models (SLM).
+
+For further details on the models used, see [models/models-research.md](models/models-research.md).
