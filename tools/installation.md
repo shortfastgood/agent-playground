@@ -1,6 +1,8 @@
 # Installation Guide
 
-This document outlines the steps to set up your development environment for the Agent Playground project.
+This document outlines the steps to set up your development environment for the Agent Playground project. 
+
+Unlike traditional detailed descriptions, this document only contains information specific to the project and its configurations. The tools used are well documented by their respective creators. For those who prefer not to read lengthy documentation, we suggest using AI chat capabilities. This approach is also one of the project's objectives, as it allows you to evaluate the benefits of interacting with your development tools.
 
 ## Prerequisites
 
@@ -11,6 +13,7 @@ Ensure you have the following installed on your system:
 - A text editor or IDE (Intellij Ultimate recommended, as used in the project)
 - GitHub account with GitHub Copilot subscription (for AI-assisted development)
 - [Ollama](https://ollama.com) LLM runner (for local model inference)
+- [Aider Chat](https://aider.chat) (for local model inference)
 
 ## Supported Operating Systems
 
@@ -44,53 +47,61 @@ Ensure you have the following installed on your system:
 
 ## Environment Configuration
 
-1. Create a `.env` file in the project root with the following settings:
-   ```
-   # API Keys (if applicable)
-   OPENAI_API_KEY=your_openai_api_key
-   ANTHROPIC_API_KEY=your_anthropic_api_key
-   
-   # Configuration
-   MODEL_PROVIDER=openai  # or anthropic, local, etc.
-   LOG_LEVEL=info
-   ```
+You must define the OLLAMA_API_BASE environment variable to connect Aider Chat and Ollama.
 
-2. Configure GitHub integration:
-   - Generate a Personal Access Token with `repo` scope
-   - Add to your `.env` file:
-   ```
-   GITHUB_TOKEN=your_github_token
-   ```
+    OLLAMA_API_BASE=http://127.0.0.1:11434
 
 ## Model Setup
 
-### Large Language Models (Cloud-based)
+After installing Ollama, open a terminal window and execute the following command for each model you want to use:
 
-For cloud-based LLMs, ensure you have:
-- Valid API keys added to your `.env` file
-- Sufficient API quota/credits for your usage
+```bash
+ollama pull [model-name]
+```
+
+Replace `[model-name]` with the specific model identifier you wish to download and use (e.g., `llama3`, `codellama`).
+
+### Large Language Models (Local)
+
+Large language models don't actually work locally as they require specialized hardware and significant computational resources. For local use, models must be distilled and have reflective capabilities. Currently, only a few models with these characteristics can respond adequately in reasonable timeframes on consumer hardware.
+
+Good to excellent results can be achieved with deepseek-r1:14b (9 GB) even on common PCs. If you have an Apple Silicon M3 processor with at least 32GB RAM or equivalent hardware, you can consider using the 32b model variant.
 
 ### Small Language Models (Local)
 
-For local inference:
-1. Install additional dependencies:
-   ```bash
-   pip install -r requirements-local.txt
-   ```
+Small language models work well locally, but they only support simple and carefully described prompts. These models become particularly valuable for processing instructions that are the result of detailed reports and analyses produced by larger models. Satisfactory results have been achieved with llama3.2:3b.
 
-2. Download model weights:
-   ```bash
-   python tools/download_models.py --model codellama-7b
-   ```
+### Aider Chat
 
-## Verification
+The following snippets represent the two configuration files for Aider Chat for this laboratory. Both files should be placed into the root directory of the GIT project.
 
-Verify your installation is working:
-```bash
-python -m agent_playground.verify_setup
+**.aider.conf.yml**
+
+```yaml
+#################
+# Model settings:
+model: ollama_chat/deepseek-r1:14b
+
+##################
+# Output settings:
+light-mode: true
+
+###############
+# Git settings:
+auto-commits: false
+dirty-commits: false
 ```
 
-This should output a confirmation that all components are correctly installed and configured.
+**.aider.models.settings.yml**
+
+```yaml
+- name: ollama_chat/deepseek-r1:14b
+  extra_params:
+    num_ctx: 65536
+- name: ollama_chat/llama3.2:3b
+  extra_params:
+    num_ctx: 8192
+```
 
 ## IDE Integration
 
@@ -115,3 +126,7 @@ If you encounter issues:
 4. For model loading issues, ensure you have sufficient RAM (8GB minimum, 16GB+ recommended)
 
 For additional help, please open an issue on the GitHub repository.
+
+`
+`
+`

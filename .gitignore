@@ -172,4 +172,9 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Intellij IDEA
 /.idea/
+
+# Aider Chat
+.aider*
