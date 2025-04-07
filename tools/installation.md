@@ -123,7 +123,7 @@ If you encounter issues:
 1. Check the logs in the `logs/` directory
 2. Ensure all API keys are valid and have necessary permissions
 3. Verify your Python version meets the minimum requirements
-4. For model loading issues, ensure you have sufficient RAM (8GB minimum, 16GB+ recommended)
+4. For model loading issues, ensure you have sufficient RAM (16GB minimum, 32GB+ recommended)
 
 For additional help, please open an issue on the GitHub repository.
 

@@ -9,7 +9,7 @@ To avoid yet another project without a final purpose, it is based on a concrete 
 
 The project utilizes the "vibe coding" paradigm, which emphasizes maximum delegation to artificial intelligence systems throughout the development lifecycle. The strategic objective focuses on optimizing resource efficiency by minimizing supplementary costs when compared with conventional projects lacking significant AI integration. Consequently, the economic evaluation framework excludes baseline infrastructure and personnel allocations that would be requisite regardless of intelligent automation implementation.
 
-To start the project, an IDE (Intellij Ultimate) and a repository on the GitHub platform are used. Artificial intelligence is integrated using the GitHub-Copilot plugin in the paid version, which impacts costs in the order of 10 USD per month. Be aware: the indicated costs are for a small-scale implementation like this lab. An enterprise setup can cost up to four times as much. 
+To start the project, an IDE (Intellij Ultimate) and a repository on the GitHub platform are used. Artificial intelligence is integrated using the GitHub-Copilot plugin in the paid version, which impacts costs in the order of 10 USD per month. Be aware: the indicated costs are for a small-scale implementation like this lab. A business seat costs 19 USD per month by Amazon, Anthropic, and GitHub.
 
 The texts, originally written in Italian, are translated and added to the documentation through Copilot Edits. The chosen model is Claude 3.7 Sonnet Thinking.
 
