@@ -30,3 +30,7 @@ That said, the implementation uses the latest version of Python and aims to be o
 For a search or scan across different levels in the filesystem, that produces a correct code analysis, a large reflective model, potentially using a significant amount of memory, is required. Conversely, the results of these analyses can be divided into small steps to be executed in parallel. In the first case, we refer to Large Language Models (LLM), in the second case, Small Language Models (SLM).
 
 For further details on the models used, see [models/models-research.md](models/models-research.md).
+
+## Research
+
+The research section is dedicated to the study of the models used in the project. The goal is to understand how they work and how to use them effectively. The research is divided into two main areas: Large Language Models (LLM) and Small Language Models (SLM). For further details, see [research/research.md](research/research.md).
