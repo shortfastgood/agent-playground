@@ -15,9 +15,30 @@ The texts, originally written in Italian, are translated and added to the docume
 
 The additional tools and models used in this project are listed in [tools/installation.md](tools/installation.md).
 
+## More Use Cases
+
+The project is designed to be extensible and adaptable to various use cases. Here are some additional scenarios where the principles and tools developed in this project can be applied:
+
+**Legacy Code Modernization**: 
+
+A concrete uses case is the reverse engineering of an existing monolithic application into a microservices' architecture. 
+This involves analyzing the existing codebase, identifying components that can be separated into microservices, 
+and generating the necessary code and configuration files for the new architecture.
+
+**Automated Testing**: 
+
+Many organizations struggle with maintaining a comprehensive suite of automated tests. 
+The coverage of the codebase is often low, and writing tests can be time-consuming.
+
+**Image Analysis**:
+
+A concrete uses case is the analysis of the widgets in a web/mobile application to reproduce the same behavior in a different context.
+
 ## Prompts
 
 A collection of prompts used to generate the documentation and the code are stored in the `prompts` directory.
+Be aware that the prompts doesn't guarantee the same results as the ones used in the project, 
+the AI world is not deterministic and the results may vary depending on the context and the model used.
 
 ## Architecture
 
