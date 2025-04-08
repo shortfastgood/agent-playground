@@ -34,11 +34,25 @@ The coverage of the codebase is often low, and writing tests can be time-consumi
 
 A concrete uses case is the analysis of the widgets in a web/mobile application to reproduce the same behavior in a different context.
 
+## Strategy
+
+The approach to provide a suitable implementation to an IT use case does not change with the introduction of artificial intelligence; a strategy is always necessary. First of all, it must be kept in mind that our digital assistant needs to be instructed correctly. The assistant has both technical and content limitations.
+
+The amount of information we can provide to the model at once depends on the size of the installation; with a local installation, it's necessary to divide the work into tasks that are as simple as possible. 
+
+The relevance of the responses depend on the model: if the topic concerns a software package with many new features released after our model's publication, we will likely not obtain relevant answers to our questions.
+
+Additionally, artificial intelligence is not deterministic and often proves inconsistent and volatile; restricting its scope and steering it toward a stable path remains a task that must be carried out by human intelligence.
+
+or further details on the strategies used, see [strategies/readme.md](strategies/readme.md).
+
 ## Prompts
 
 A collection of prompts used to generate the documentation and the code are stored in the `prompts` directory.
 Be aware that the prompts doesn't guarantee the same results as the ones used in the project, 
 the AI world is not deterministic and the results may vary depending on the context and the model used.
+
+For furter details on the prompts used, see [prompts/readme.md](prompts/readme.md).
 
 ## Architecture
 
@@ -55,3 +69,4 @@ For further details on the models used, see [models/models-research.md](models/m
 ## Research
 
 The research section is dedicated to the study of the models used in the project. The goal is to understand how they work and how to use them effectively. The research is divided into two main areas: Large Language Models (LLM) and Small Language Models (SLM). For further details, see [research/research.md](research/research.md).
+
