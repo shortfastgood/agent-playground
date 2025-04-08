@@ -1,0 +1,14 @@
+{
+    "scandir": "../ifps",
+    "report": "./research/report01.txt",
+    "model": "deepseek-r1:14b",
+    "azure_model": "DeepSeek-R1",
+    "modelOptions": {
+        "temperature": 0.3,
+        "num_ctx": 16536,
+        "top_k": 40,
+        "top_p": 0.9,
+        "min_p": 0.0
+    },
+    "azure_endpoint": "https://models.inference.ai.azure.com"
+}
