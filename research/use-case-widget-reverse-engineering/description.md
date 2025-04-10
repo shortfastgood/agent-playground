@@ -55,3 +55,6 @@ Note: the generated code is intended for use in Flutter and Dart and requires an
 the [FlutLab](https://flutlab.io/) platform to be run. 
 The code is not guaranteed to be functional and may require adjustments.
 
+[ChatGPT](run-chatgpt.md) strategy implementation using ChatGPT.
+
+[Ollama+Deepseek](run-ollama.md) strategy implementation using Ollama+Deepseek.
