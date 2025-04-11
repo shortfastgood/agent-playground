@@ -16,6 +16,8 @@ Candidates are Claude Coding, GitHub Copilot (as plugin in Intellij or Visual St
 
 The subsequent steps allow refining both the specifications and the result, always using commands formulated to the agent responsible for code generation.
 
+See also [AI Agents Prototypes](../agents/readme.md)
+
 ## Image Analysis
 
 ### Use Case Reverse Engineering of a Widget
