@@ -34,6 +34,9 @@ The coverage of the codebase is often low, and writing tests can be time-consumi
 
 A concrete uses case is the analysis of the widgets in a web/mobile application to reproduce the same behavior in a different context.
 
+## AI Agents
+- [Agents](agents/readme.md): This section contains the prototypes of the AI agents developed in the project.
+
 ## Strategy
 
 The approach to provide a suitable implementation to an IT use case does not change with the introduction of artificial intelligence; a strategy is always necessary. First of all, it must be kept in mind that our digital assistant needs to be instructed correctly. The assistant has both technical and content limitations.
