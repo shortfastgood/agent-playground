@@ -267,21 +267,21 @@ class DonutChartPainter extends CustomPainter {
     // Draw center text
     final titleTextStyle = TextStyle(
       color: Colors.black,
-      fontSize: 22 * scale,  // Updated from 20 to 22
+      fontSize: 26 * scale,  // Updated from 20 to 26
       fontFamily: 'sans-serif',
       fontWeight: FontWeight.w700,  // Updated from w500 to w700
     );
     
     final currencyTextStyle = TextStyle(
       color: Colors.black,
-      fontSize: 26 * scale,  // Updated from 24 to 26
+      fontSize: 30 * scale,  // Updated from 24 to 30
       fontFamily: 'sans-serif',
       fontWeight: FontWeight.w700,  // Updated from w500 to w700
     );
     
     final valueTextStyle = TextStyle(
       color: Colors.black,
-      fontSize: 26 * scale,  // Updated from 20 to 26
+      fontSize: 30 * scale,  // Updated from 20 to 30
       fontFamily: 'sans-serif',
       fontWeight: FontWeight.w700,  // Updated from w500 to w700
     );

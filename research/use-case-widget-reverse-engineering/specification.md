@@ -44,8 +44,8 @@
 - The font used for the labels, title and values should be a sans-serif font. 
 - On the reference screen, the default font size should be 16 pixels. The font size should scale proportionally to the size of the widget.
 - On the reference screen, the font size of the values in the legend should be 18 pixels. The font size should scale proportionally to the size of the widget.
-- On the reference screen, the font size of the donut currency symbol and of the donut value should be 26 pixels. The font size should scale proportionally to the size of the widget.
-- On the reference screen, the font size of the donut title should be 22 pixels. The font size should scale proportionally to the size of the widget.
+- On the reference screen, the font size of the donut currency symbol and of the donut value should be 30 pixels. The font size should scale proportionally to the size of the widget.
+- On the reference screen, the font size of the donut title should be 26 pixels. The font size should scale proportionally to the size of the widget.
 - The default font weight should be normal. The font weight of the labels in the legend, of the donut title, donut of the currency symbol and of the donut value should be 700.
 - The gap between currency symbol and value is 5 pixels.
 - The gap between the colored square and the label in the legend is 5 pixels.
