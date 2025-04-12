@@ -88,6 +88,19 @@ class DependencyUpdater:
             except Exception as e:
                 logger.error(f"Failed to set up Anthropic client: {str(e)}")
                 sys.exit(1)
+        
+        elif provider == "ollama":
+            try:
+                import ollama
+                # Configure Ollama with URL from config
+                ollama_url = self.config.get("ollama_url", "http://localhost:11434")
+                # Create client instance with the host URL parameter
+                self.client = ollama.Client(host=ollama_url)
+                self.ai_model = self.config.get("ollama_model", "llama3.2:b3")
+                logger.info(f"Ollama client configured with URL {ollama_url} and model {self.ai_model}")
+            except Exception as e:
+                logger.error(f"Failed to set up Ollama client: {str(e)}")
+                sys.exit(1)
         else:
             logger.error(f"Unsupported AI provider: {provider}")
             sys.exit(1)
@@ -129,8 +142,15 @@ class DependencyUpdater:
         """
         
         try:
-            # Check if using Anthropic client based on provider setting
-            if self.provider == "anthropic" or (not self.provider and self.config.get("ai_provider") == "anthropic"):
+            # Check provider type and use appropriate client
+            if self.provider == "ollama" or (not self.provider and self.config.get("ai_provider") == "ollama"):
+                response = self.client.chat(
+                    model=self.ai_model,
+                    messages=[{"role": "user", "content": prompt}]
+                )
+                result = response['message']['content']
+                
+            elif self.provider == "anthropic" or (not self.provider and self.config.get("ai_provider") == "anthropic"):
                 response = self.client.messages.create(
                     model=self.ai_model,
                     max_tokens=4000,
@@ -144,11 +164,18 @@ class DependencyUpdater:
                 )
                 result = response.choices[0].message.content
                 
-            # Extract JSON from response
-            import re
-            json_match = re.search(r'\[.*\]', result, re.DOTALL)
-            if json_match:
-                dependencies_json = json.loads(json_match.group(0))
+            # Extract JSON from response with enhanced pattern recognition
+            try:
+                # Try to find JSON with standard regex (non-greedy)
+                json_match = re.search(r'\[.*?\]', result, re.DOTALL)
+                if json_match:
+                    dependencies_json = json.loads(json_match.group(0))
+                else:
+                    # If no match, try to clean the entire response
+                    clean_result = re.sub(r'```(?:json)?(.*?)```', r'\1', result, flags=re.DOTALL)
+                    dependencies_json = json.loads(clean_result.strip())
+                
+                # Process dependencies
                 dependencies = []
                 for dep in dependencies_json:
                     version = dep.get("version") if "version" in dep else None
@@ -158,8 +185,9 @@ class DependencyUpdater:
                         version
                     ))
                 return dependencies
-            else:
-                logger.error("Failed to extract JSON from AI response")
+            except json.JSONDecodeError as e:
+                logger.error(f"Failed to parse JSON response: {str(e)}")
+                logger.debug(f"AI response: {result}")
                 sys.exit(1)
                 
         except Exception as e:
@@ -167,8 +195,10 @@ class DependencyUpdater:
             sys.exit(1)
     
     def is_milestone_or_rc(self, version: str) -> bool:
-        """Check if a version is a milestone or release candidate"""
-        return bool(re.search(r'M\d+$', version, re.IGNORECASE) or re.search(r'RC\d+$', version, re.IGNORECASE))
+        """Check if a version is a milestone, release candidate, or alpha version"""
+        return bool(re.search(r'M\d+$', version, re.IGNORECASE) or 
+                    re.search(r'RC\d+$', version, re.IGNORECASE) or
+                    re.search(r'alpha\d+$', version, re.IGNORECASE))
     
     def get_latest_version(self, dependency: Dependency) -> str:
         """Get latest version of a dependency from Maven central repository"""
@@ -274,8 +304,15 @@ class DependencyUpdater:
         """
         
         try:
-            # Check if using Anthropic client based on provider setting
-            if self.provider == "anthropic" or (not self.provider and self.config.get("ai_provider") == "anthropic"):
+            # Check provider type and use appropriate client
+            if self.provider == "ollama" or (not self.provider and self.config.get("ai_provider") == "ollama"):
+                response = self.client.chat(
+                    model=self.ai_model,
+                    messages=[{"role": "user", "content": prompt}]
+                )
+                result = response['message']['content']
+                
+            elif self.provider == "anthropic" or (not self.provider and self.config.get("ai_provider") == "anthropic"):
                 response = self.client.messages.create(
                     model=self.ai_model,
                     max_tokens=8000,
@@ -336,7 +373,7 @@ def main():
     parser.add_argument("file_path", help="Path to the build.gradle or pom.xml file")
     parser.add_argument("--conf", default="config.json", 
                         help="Path to configuration file (default: config.json)")
-    parser.add_argument("--provider", choices=["azure", "anthropic"], 
+    parser.add_argument("--provider", choices=["azure", "anthropic", "ollama"], 
                         help="AI provider to use (overrides configuration file)")
     
     args = parser.parse_args()
@@ -350,3 +387,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
