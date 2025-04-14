@@ -47,27 +47,23 @@ The relevance of the responses depend on the model: if the topic concerns a soft
 
 Additionally, artificial intelligence is not deterministic and often proves inconsistent and volatile; restricting its scope and steering it toward a stable path remains a task that must be carried out by human intelligence.
 
-or further details on the strategies used, see [strategies/readme.md](strategies/readme.md).
-
 ## Prompts
 
 A collection of prompts used to generate the documentation and the code are stored in the `prompts` directory.
 Be aware that the prompts doesn't guarantee the same results as the ones used in the project, 
 the AI world is not deterministic and the results may vary depending on the context and the model used.
 
-For furter details on the prompts used, see [prompts/readme.md](prompts/readme.md).
-
 ## Architecture
 
 Ideally, a large language model should be able to interface with the entire world using any language; obviously, this doesn't happen on its own. Currently, initiatives are continuously popping up here and there. One in particular seems to have certain consistency and a significant following: the Model Context Protocol (MCP), which aims to standardize agents' access to external resources.
 
-That said, the implementation uses the latest version of Python and aims to be operational on MacOS, Windows (from version 11), and Linux (Ubuntu 24.04). As mentioned earlier, the project is hosted on the GitHub platform.
+
 
 ## Data Models
 
 For a search or scan across different levels in the filesystem, that produces a correct code analysis, a large reflective model, potentially using a significant amount of memory, is required. Conversely, the results of these analyses can be divided into small steps to be executed in parallel. In the first case, we refer to Large Language Models (LLM), in the second case, Small Language Models (SLM).
 
-For further details on the models used, see [models/models-research.md](models/models-research.md).
+For further details on the models used, see [research/models/models-research.md](research/models/models-research.md).
 
 ## Research
 

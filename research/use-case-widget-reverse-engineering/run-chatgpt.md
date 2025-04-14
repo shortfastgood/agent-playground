@@ -208,5 +208,5 @@ Displays a list of categories using a ListView. Each list item shows a small col
 
 ## Code Runned on FlutLab
 
-- ![Donut](chatgpt-flutter-donut.png)
+- ![Donut](images/chatgpt-flutter-donut.png)
 
