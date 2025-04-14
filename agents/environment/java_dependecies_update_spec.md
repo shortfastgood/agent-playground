@@ -39,6 +39,6 @@
 - The code should be tested with a sample Gradle and Maven file.
 - The code should be able to handle errors and exceptions.
 - The main file is `agents/environment/update_java_dependencies.py`.
-- The configuration file is `config.json` by default or can be specified with the `--conf` argument.
+- The configuration file is `agents/environment/config.json` by default or can be specified with the `--conf` argument.
 - The python requirements are in `agents/environment/requirements.txt`.
 

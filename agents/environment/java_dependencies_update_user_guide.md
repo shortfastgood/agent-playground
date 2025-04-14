@@ -104,7 +104,7 @@ Here's a sample configuration file:
   "azure_openai_endpoint": "https://your-azure-openai-endpoint.com/",
   "azure_openai_api_version": "2024-12-01-preview",
   "azure_openai_model": "gpt-4o",
-  "anthropic_model": "claude-3-sonnet-20240229",
+  "anthropic_model": "claude-3-7-sonnet-20250219",
   "ollama_url": "http://localhost:11434",
   "ollama_model": "llama3.2:b3",
   "request_timeout": 60,
