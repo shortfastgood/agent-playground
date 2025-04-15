@@ -1,22 +1,20 @@
-# Playwright MCP
+# Selenium MCP
 
-## Home
+- [Project page](https://github.com/angiejones/mcp-selenium)
 
-[Project page](https://github.com/microsoft/playwright-mcp)
-
-## Install Playwright MCP
+## Install Selenium MCP
 
 Prerequisite: Node.js and npm must be installed.
 
 ```bash
-npm install -g @playwright/mcp@latest 
+npm install -g @angiejones/mcp-selenium 
 ```
 
 ## Using Claude Coding (MacOS)
 
 1. Connect to the Playwright MCP server using the command:
 ```bash
-claude mcp add playwright -s project npx @playwright/mcp@latest
+claude mcp add selenium -s project npx -y @angiejones/mcp-selenium
 ```
 2. Start Claude Coding
 ```bash
@@ -25,20 +23,18 @@ claude
 
 3. Describe the task you want to automate.
 ```bash
-Navigate to website "https://www.crealogix.com" using the "safari" browser. 
+Navigate to website "https://www.crealogix.com" using the "chrome" browser. 
 If a dialog having a button "ACCCEPT ALL" appears click on "ONLY FUNCTIONAL COOKIES". 
 If EN appears on the menu bar, open the drop-down and select DE and click on it.
 ```
 
-## Use Visual Studio Code (unreliable)
-
-In 50% of the cases, the copilot suggest how to code the task instead to execute it. 
+## Using Visual Studio Code
 
 Prerequisite: Visual Studio Code 1.99.2+ and GitHub Copilot 1.301.0+ must be installed.
 
 1. Connect to the Playwright MCP server using the command:
 ```pwsh 
-code --add-mcp '{\"name\":\"playwright\",\"command\":\"npx\",\"args\":[\"@playwright/mcp@latest\"]}'
+code --add-mcp '{\"name\":\"selenium\",\"command\":\"npx\",\"args\":[\"-y\",\"@angiejones/mcp-selenium\"]}'
 ```
 2. Start Visual Studio Code
 
@@ -48,7 +44,7 @@ code --add-mcp '{\"name\":\"playwright\",\"command\":\"npx\",\"args\":[\"@playwr
 
 4. Describe the task you want to automate.
 ```
-Navigate to website "https://www.crealogix.com" using the "safari" browser. 
-If a dialog having a button "ACCCEPT ALL" appears click on "ONLY FUNCTIONAL COOKIES". 
+selenium: Navigate to website "https://www.crealogix.com" using the "chrome" browser. 
+If a dialog having a button "ACCCEPT ALL" appears click on the button "ONLY FUNCTIONAL COOKIES" on the same dialog. 
 If EN appears on the menu bar, open the drop-down and select DE and click on it.
 ```

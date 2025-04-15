@@ -57,7 +57,7 @@ the AI world is not deterministic and the results may vary depending on the cont
 
 Ideally, a large language model should be able to interface with the entire world using any language; obviously, this doesn't happen on its own. Currently, initiatives are continuously popping up here and there. One in particular seems to have certain consistency and a significant following: the Model Context Protocol (MCP), which aims to standardize agents' access to external resources.
 
-
+- [**Model Context Protocol**](mcp/mcp.md): The Model Context Protocol (MCP) is a protocol designed to facilitate the interaction between AI agents and their environment. It provides a structured way for agents to communicate, share information, and collaborate on tasks. The MCP is particularly useful in scenarios where multiple agents need to work together to achieve a common goal.
 
 ## Data Models
 
