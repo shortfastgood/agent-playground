@@ -14,6 +14,8 @@ npm install -g @playwright/mcp@latest
 
 ## Using Claude Coding (MacOS)
 
+Note: Reliable and fast.
+
 1. Connect to the Playwright MCP server using the command:
 ```bash
 claude mcp add playwright -s project npx @playwright/mcp@latest
@@ -25,14 +27,14 @@ claude
 
 3. Describe the task you want to automate.
 ```bash
-Navigate to website "https://www.crealogix.com" using the "safari" browser. 
+Navigate to website "https://www.crealogix.com" using the browser. 
 If a dialog having a button "ACCCEPT ALL" appears click on "ONLY FUNCTIONAL COOKIES". 
 If EN appears on the menu bar, open the drop-down and select DE and click on it.
 ```
 
 ## Use Visual Studio Code (unreliable)
 
-In 50% of the cases, the copilot suggest how to code the task instead to execute it. 
+Note: In 50% of the cases, the copilot suggest how to code the task instead to execute it. 
 
 Prerequisite: Visual Studio Code 1.99.2+ and GitHub Copilot 1.301.0+ must be installed.
 
