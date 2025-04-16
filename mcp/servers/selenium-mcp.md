@@ -24,7 +24,7 @@ claude
 3. Describe the task you want to automate.
 ```bash
 Navigate to website "https://www.crealogix.com" using the "chrome" browser. 
-If a dialog having a button "ACCCEPT ALL" appears click on "ONLY FUNCTIONAL COOKIES". 
+If a dialog having a button "ACCEPT ALL" appears click on "ONLY FUNCTIONAL COOKIES". 
 If EN appears on the menu bar, open the drop-down and select DE and click on it.
 ```
 
@@ -48,6 +48,6 @@ code --add-mcp '{\"name\":\"selenium\",\"command\":\"npx\",\"args\":[\"-y\",\"@a
 4. Describe the task you want to automate.
 ```
 selenium: Navigate to website "https://www.crealogix.com" using the "chrome" browser. 
-If a dialog having a button "ACCCEPT ALL" appears click on the button "ONLY FUNCTIONAL COOKIES" on the same dialog. 
+If a dialog having a button "ACCEPT ALL" appears click on the button "ONLY FUNCTIONAL COOKIES" on the same dialog. 
 If EN appears on the menu bar, open the drop-down and select DE and click on it.
 ```

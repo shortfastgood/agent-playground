@@ -8,4 +8,5 @@ The use of MCP servers may involve risks, article "[MCP Servers are not safe](ht
 
 ## Servers
 
-- [Playwright MCP](playwright-mcp.md): A server that allows AI agents to interact with the Playwright framework for web automation tasks.
+- [Playwright MCP](servers/playwright-mcp.md): A server that allows AI agents to interact with the Playwright framework for web automation tasks.
+- [Selenium MCP](servers/selenium-mcp.md): A server that allows AI agents to interact with the Selenium framework for web automation tasks.

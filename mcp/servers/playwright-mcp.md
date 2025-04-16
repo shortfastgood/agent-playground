@@ -14,6 +14,8 @@ npm install -g @playwright/mcp@latest
 
 ## Using Claude Coding (MacOS)
 
+Note: Reliable and fast.
+
 1. Connect to the Playwright MCP server using the command:
 ```bash
 claude mcp add playwright -s project npx @playwright/mcp@latest
@@ -25,8 +27,8 @@ claude
 
 3. Describe the task you want to automate.
 ```bash
-Navigate to website "https://www.crealogix.com" using the "safari" browser. 
-If a dialog having a button "ACCCEPT ALL" appears click on "ONLY FUNCTIONAL COOKIES". 
+Navigate to website "https://www.crealogix.com" using the browser. 
+If a dialog having a button "ACCEPT ALL" appears click on "ONLY FUNCTIONAL COOKIES". 
 If EN appears on the menu bar, open the drop-down and select DE and click on it.
 ```
 
@@ -50,6 +52,6 @@ code --add-mcp '{\"name\":\"playwright\",\"command\":\"npx\",\"args\":[\"@playwr
 4. Describe the task you want to automate.
 ```
 Navigate to website "https://www.crealogix.com" using the "safari" browser. 
-If a dialog having a button "ACCCEPT ALL" appears click on "ONLY FUNCTIONAL COOKIES". 
+If a dialog having a button "ACCEPT ALL" appears click on "ONLY FUNCTIONAL COOKIES". 
 If EN appears on the menu bar, open the drop-down and select DE and click on it.
 ```
