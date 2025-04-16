@@ -32,7 +32,8 @@ If EN appears on the menu bar, open the drop-down and select DE and click on it.
 
 ## Use Visual Studio Code (unreliable)
 
-In 50% of the cases, the copilot suggest how to code the task instead to execute it. 
+In 50% of the cases, the copilot agent suggests how to code the task instead to execute it.
+Even with different prompt techniques there is no way to keep the Copilot focused on the operation with the Playwright MCP.
 
 Prerequisite: Visual Studio Code 1.99.2+ and GitHub Copilot 1.301.0+ must be installed.
 
