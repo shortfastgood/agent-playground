@@ -1,14 +1,14 @@
-# Update Java Dependencies Agent
+# Use Case Web UI Test
 
 ## Objective
-The objective of this research is to develop a simple and useful AI agent and to test it using different providers and models. 
+The objective of this research is to develop a simple and useful AI agent and to test it with two different MCP servers. 
 A secondary objective is to evaluate if the performance of a local provider on existing hardware is sufficient.
 
 ## Scope Boundaries
-The scope of this research is limited to the use of AI for updating Java dependencies in Gradle and Maven projects.
+The purpose of this research is limited to evaluating the advantages of a user interface test compared to traditional record-and-playback or even coded tests.
 
 ## Key Question
-Is a local provider sufficient for the task of updating Java dependencies in Gradle and Maven projects?
+Is the management of these tests throughout the lifecycle of this user interface less demanding with the use of artificial intelligence?
 
 ## Strategy
 The development starts by writing a first version of the specification in natural language, ensuring clarity and precision. Development proceeds interactively with a collaboration between the developer and artificial intelligence. The files are modified, predominantly, by the AI agent chosen as the co-developer.

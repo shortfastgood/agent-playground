@@ -12,7 +12,7 @@ Prerequisite: Node.js and npm must be installed.
 npm install -g @playwright/mcp@latest 
 ```
 
-## Using Claude Coding (MacOS)
+## Using Claude Coding (MacOS, Ubuntu Linux)
 
 Note: Reliable and fast.
 
