@@ -19,12 +19,13 @@ It includes a set of tests that can be run to ensure that the protocol is functi
 #### UI Automation
 
 There are two approaches to the problem: in one case, we proceed with a screenshot of the surface and try to identify the elements by analyzing the image; in the other case, we search the HTML code using XPath or something similar.
-  
 
 - [Playwright MCP](servers/playwright-mcp.md): A server that allows AI agents to interact with the Playwright framework for web automation tasks.
 - [Selenium MCP](servers/selenium-mcp.md): A server that allows AI agents to interact with the Selenium framework for web automation tasks.
 
 ### Environment Automation
+
+- [**GitHub MCP**](servers/github-mcp.md): A server that allows AI agents to interact with GitHub repositories and perform various tasks related to version control and collaboration.
 
 ### Database Automation
 
