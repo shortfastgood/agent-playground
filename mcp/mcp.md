@@ -6,7 +6,7 @@ The use of MCP servers may involve risks, article "[MCP Servers are not safe](ht
 
 ## Existing MCP Servers
 
-- [ModelContextProtocol](https://github.com/modelcontextprotocolservers)
+- [ModelContextProtocol](https://github.com/modelcontextprotocol/servers)
 - [Playwright MCP](https://github.com/microsoft/playwright-mcp)
 - [Selenium MCP](https://github.com/angiejones/mcp-selenium)
 

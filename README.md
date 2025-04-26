@@ -49,7 +49,7 @@ Additionally, artificial intelligence is not deterministic and often proves inco
 
 ## Prompts
 
-A collection of prompts used to generate the documentation and the code are stored in the `prompts` directory.
+A collection of prompts used to generate the documentation and the code are stored in the [prompts](/prompts/readme.md) directory.
 Be aware that the prompts doesn't guarantee the same results as the ones used in the project, 
 the AI world is not deterministic and the results may vary depending on the context and the model used.
 
@@ -57,7 +57,10 @@ the AI world is not deterministic and the results may vary depending on the cont
 
 Ideally, a large language model should be able to interface with the entire world using any language; obviously, this doesn't happen on its own. Currently, initiatives are continuously popping up here and there. One in particular seems to have certain consistency and a significant following: the Model Context Protocol (MCP), which aims to standardize agents' access to external resources.
 
-- [**Model Context Protocol**](mcp/mcp.md): The Model Context Protocol (MCP) is a protocol designed to facilitate the interaction between AI agents and their environment. It provides a structured way for agents to communicate, share information, and collaborate on tasks. The MCP is particularly useful in scenarios where multiple agents need to work together to achieve a common goal.
+- [**Model Context Protocol**](mcp/mcp.md): The Model Context Protocol (MCP) is a protocol designed to facilitate the interaction between AI agents and their environment. It provides a structured way for agents to communicate, share information, and collaborate on tasks.
+- [**Agent2Agent Protocol**](https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/) "*A2A is an open protocol that provides a standard way for agents to collaborate with each other, regardless of the underlying framework or vendor*"
+
+The question I ask myself is whether there is really a need for a new protocol: an agent using a large model is capable of utilizing the tools in its environment by generating the necessary commands and data for programs and libraries. A protocol could prove to be a bottleneck that limits the real possibilities offered by a large model.
 
 ## Data Models
 
@@ -68,4 +71,3 @@ For further details on the models used, see [research/models/models-research.md]
 ## Research
 
 The research section is dedicated to the study of the models used in the project. The goal is to understand how they work and how to use them effectively. The research is divided into two main areas: Large Language Models (LLM) and Small Language Models (SLM). For further details, see [research/research.md](research/research.md).
-
