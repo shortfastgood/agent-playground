@@ -1,0 +1,12 @@
+{
+  "ai_provider": "azure",
+  "azure_openai_endpoint": "https://ianr-m6rtp6mg-swedencentral.cognitiveservices.azure.com/",
+  "azure_openai_api_version": "2024-12-01-preview",
+  "azure_openai_model": "gpt-4o",
+  "anthropic_model": "claude-3-7-sonnet-20250219",
+  "database_password": "minitower",
+  "database_uri": "postgresql://10.231.3.164:5432/minitower",
+  "database_user": "minitower",
+  "ollama_url": "http://localhost:11434",
+  "ollama_model": "llama3.2:3b"
+}
