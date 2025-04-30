@@ -50,12 +50,19 @@ class DependencyUpdater:
     
     def setup_ai_client(self) -> None:
         """Set up AI client based on configuration and environment variables"""
+        # Get AI configuration section
+        ai_config = self.config.get("ai", {})
+        
         # Use provider from command line if specified, otherwise use from config
-        provider = self.provider if self.provider else self.config.get("ai_provider")
+        provider = self.provider if self.provider else ai_config.get("provider")
         
         if not provider:
-            logger.error("No AI provider defined. Specify with --provider or in config file")
+            logger.error("No AI provider defined. Specify with --provider or in config file under ai.provider")
             sys.exit(1)
+        
+        # Convert provider names if needed (e.g., azure_openai → azure)
+        if provider == "azure_openai":
+            provider = "azure"
         
         if provider == "azure":
             try:
@@ -64,12 +71,15 @@ class DependencyUpdater:
                 if not api_key:
                     raise ValueError("AZURE_API_KEY environment variable not set")
                 
+                # Get Azure-specific configuration
+                azure_config = ai_config.get("azure_openai", {})
+                
                 self.client = AzureOpenAI(
                     api_key=api_key,
-                    api_version=self.config.get("azure_openai_api_version", "2023-05-15"),
-                    azure_endpoint=self.config.get("azure_openai_endpoint")
+                    api_version=azure_config.get("api_version", "2023-05-15"),
+                    azure_endpoint=azure_config.get("endpoint")
                 )
-                self.ai_model = self.config.get("azure_openai_model", "gpt-4o")
+                self.ai_model = azure_config.get("model", "gpt-4o")
                 logger.info("Azure OpenAI client configured")
             except Exception as e:
                 logger.error(f"Failed to set up Azure OpenAI client: {str(e)}")
@@ -82,8 +92,11 @@ class DependencyUpdater:
                 if not api_key:
                     raise ValueError("ANTHROPIC_API_KEY environment variable not set")
                 
+                # Get Anthropic-specific configuration
+                anthropic_config = ai_config.get("anthropic", {})
+                
                 self.client = Anthropic(api_key=api_key)
-                self.ai_model = self.config.get("anthropic_model", "claude-3-sonnet-20240229")
+                self.ai_model = anthropic_config.get("model", "claude-3-sonnet-20240229")
                 logger.info("Anthropic client configured")
             except Exception as e:
                 logger.error(f"Failed to set up Anthropic client: {str(e)}")
@@ -92,11 +105,15 @@ class DependencyUpdater:
         elif provider == "ollama":
             try:
                 import ollama
+                # Get Ollama-specific configuration
+                ollama_config = ai_config.get("ollama", {})
+                
                 # Configure Ollama with URL from config
-                ollama_url = self.config.get("ollama_url", "http://localhost:11434")
+                ollama_url = ollama_config.get("url", "http://localhost:11434")
+                
                 # Create client instance with the host URL parameter
                 self.client = ollama.Client(host=ollama_url)
-                self.ai_model = self.config.get("ollama_model", "llama3.2:b3")
+                self.ai_model = ollama_config.get("model", "llama3.2:3b")
                 logger.info(f"Ollama client configured with URL {ollama_url} and model {self.ai_model}")
             except Exception as e:
                 logger.error(f"Failed to set up Ollama client: {str(e)}")
@@ -387,4 +404,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
