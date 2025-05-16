@@ -10,16 +10,18 @@ Ensure you have the following installed on your system:
 
 - Python 3.12+
 - Git
-- A text editor or IDE (Intellij Ultimate recommended, as used in the project)
+- [Visual Studio Code](https://code.visualstudio.com) or Intellij Ultimate
 - GitHub account with GitHub Copilot subscription (for AI-assisted development)
 - [Ollama](https://ollama.com) LLM runner (for local model inference)
 - [Aider Chat](https://aider.chat) (for local model inference)
+- [Claude Code](https://docs.anthropic.com/en/docs/claude-code/overview) (for model inference, requires an Anthropic paid subscription)
+- [OpenAI Codex](https://github.com/openai/codex) (for model inference, requires an OpenAI paid subscription)
 
 ## Supported Operating Systems
 
 - MacOS (latest version)
 - Windows 11 or newer
-- Linux (Ubuntu 24.04 recommended)
+- Linux (Ubuntu 24.04 or later)
 
 ## Basic Setup
 
@@ -46,6 +48,9 @@ Ensure you have the following installed on your system:
    ```
 
 ## Environment Configuration
+
+### Local Inference
+
 
 You must define the OLLAMA_API_BASE environment variable to connect Aider Chat and Ollama.
 
@@ -103,7 +108,22 @@ dirty-commits: false
     num_ctx: 8192
 ```
 
+### Remote Inference
+
+For Claude Code and OpenAI Codex, you need to set the following environment variables:
+
+    ANTHROPIC_API_KEY=your_key
+    OPENAI_API_KEY=your_key   
+
+
 ## IDE Integration
+
+### Visual Studio Code Setup
+
+1. Install the GitHub Copilot extension:
+   - Go to Extensions (Ctrl+Shift+X)
+   - Search for "GitHub Copilot"
+   - Install and reload VS Code
 
 ### IntelliJ Setup
 
