@@ -9,7 +9,11 @@ To avoid yet another project without a final purpose, it is based on a concrete 
 
 The project utilizes the "vibe coding" paradigm, which emphasizes maximum delegation to artificial intelligence systems throughout the development lifecycle. The strategic objective focuses on optimizing resource efficiency by minimizing supplementary costs when compared with conventional projects lacking significant AI integration. Consequently, the economic evaluation framework excludes baseline infrastructure and personnel allocations that would be requisite regardless of intelligent automation implementation.
 
+**Originally, the project was launched on the wave of "vibe coding", but following my experience, the adoption of vibe coding leads to various problems that discourage its use. However, the extensive use of commands and suggestions made with natural language remains an opportunity that should be leveraged, though it requires accompanying measures to avoid quality and security issues. This approach can be defined as AI-assisted development, where the developer always maintains control over what happens or is produced.**
+
 To start the project, an IDE (Intellij Ultimate) and a repository on the GitHub platform are used. Artificial intelligence is integrated using the GitHub-Copilot plugin in the paid version, which impacts costs in the order of 10 USD per month. Be aware: the indicated costs are for a small-scale implementation like this lab. A business seat costs 19 USD per month by Amazon, Anthropic, and GitHub.
+
+**End of May 2025 update**: At this point, I have moved development to Visual Studio Code where I continue to use GitHub Copilot. The agent proposed by Microsoft integrates very well in both Windows and MacOS environments and offers a good number of connections between LLM and the work environment that are quite safe and reliable. The artificial intelligence integration is well-made, easy to use, and truly practical.
 
 The texts, originally written in Italian, are translated and added to the documentation through Copilot Edits. The chosen model is Claude 3.7 Sonnet Thinking.
 
