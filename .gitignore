@@ -178,3 +178,4 @@ cython_debug/
 
 # Aider Chat
 .aider*
+/.mcp.json
